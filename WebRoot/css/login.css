@@ -1,0 +1,47 @@
+/*基本信息*/
+Body {font:12px Tahoma;margin:0px;text-align:center;background:#ffff;}
+
+/*页面层容器*/
+#container {width:100%;}
+
+/*页面头部*/
+#Header {width:1000px;margin:0 auto;height:100px;background:#FFF}
+
+/*页面主体*/
+#PageBody {width:1000px;margin:0 auto;height:580px;background:#FFF}
+
+/*页面底部*/
+#Footer {width:1000px;margin:0 auto;height:auto;background:#FFF}
+/*侧边栏*/
+#Sidebar{width:50px;margin:0 auto;height:30px}
+
+/*主题内容*/
+#MainBody{width:1000px;margin:0 auto;height:300px;}
+
+/*字体*/
+#font{color:#9999CC;font-size:18px;font-family:Tahoma;text-decoration : none;text-align :right}
+
+/*按钮*/
+#button{background:#9966FF;color:#FFFFFF;font-size:18px;border-color:#CCCCFF;width:70px;height:30px }
+
+/*错误字体*/
+#error{color:#FF99CC;font-size:12px;font-family:"新宋体";text-decoration :none;white-space:nowrap;list-style-type:none;}
+
+#topSide {width:1000px;margin:0 auto;height:100px;background:#49A38A}
+#leftSide{
+	background-color:#FFCCFF;
+	position: absolute;
+	left: 1in;
+	top: 125px;
+	width:200px;margin:0 auto;height:auto;
+}
+
+#rightSide{ background-color:#CCCCFF; position:absolute; right:1in;top: 110px;width:800px;margin:0 auto;height:anto;}
+
+
+
+a:link { font-size: 18px; text-decoration: none; color:#99CCFF }
+a:hover { font-size: 18px; text-decoration: underline; color:#CC99FF }
+
+li{list-style-type:none}
+ul{ list-style-type:none} 

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<script language=javascript src="../js/date.js"></script>
+<script>
+var oCalendarChs=new PopupCalendar("oCalendarChs"); //初始化控件时,请给出实例名称:oCalendarChs
+oCalendarChs.weekDaySting=new Array("日","一","二","三","四","五","六");
+oCalendarChs.monthSting=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+oCalendarChs.oBtnTodayTitle="今天";
+oCalendarChs.oBtnCancelTitle="取消";
+oCalendarChs.Init();
+</script>
+<table>
+<tr>
+<td>
+<input readonly type="text" name="birthday" onclick="getDateString(this,oCalendarChs)" value="1987-11-22" size="15">
+</td>
+</tr>
+</table>
+</html>
+

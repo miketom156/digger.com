@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+          "-//OpenSymphony Group//XWork Validator 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd"  > 
+          <validators>
+          <field name="map_log_lat.place_name">
+          <field-validator type="requiredstring">
+          <message>地理位置名称不能为空！</message>
+          </field-validator>
+          </field>
+          <field name="map_log_lat.address">
+          <field-validator type="requiredstring">
+          <message>详细地址不能为空！</message>
+          </field-validator>
+          </field>
+          <field name="map_log_lat.map_longitude">
+          <field-validator type="required">
+    <message>经度:必需填写且必须为0--180以内的数字！</message>
+   </field-validator>
+         <field-validator type="double">
+         <param name="minInclusive">0</param>
+        <param name="maxInclusive">180</param>
+        <message>经度:必需必须为0--180以内的数字！</message>
+          </field-validator>
+          </field>
+          <field name="map_log_lat.map_latitude">
+          <field-validator type="required">
+    <message>纬度:必需填写且必须为0--90以内的数字！</message>
+   </field-validator>
+          <field-validator type="double">
+         <param name="minInclusive">0</param>
+        <param name="maxInclusive">90</param>
+        <message>纬度:必需必须为0--90以内的数字！</message>
+          </field-validator>
+          </field>
+          <field name="map">
+          <field-validator type="required">
+          <message>您还没有选择数据！</message>
+          </field-validator>
+          </field>
+          </validators>   
+            
+

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />  
+    <constant name="struts.ui.theme" value="simple" />   
+    <constant name="struts.ui.templateDir" value="template" />   
+    <constant name="struts.ui.templateSuffix" value="ftl" /> 
+	<package name="digger.com" extends="struts-default">
+		<action name="login" class="com.digger.action.User_infoAction"
+			method="login">
+			<result name="success"  >../index.jsp</result>
+			<result name="login">login.jsp</result>
+			<result name="input">login.jsp</result>
+		</action>
+		<action name="updatePassword" class="com.digger.action.User_infoAction"
+			method="updatePassword">
+			<result name="success" type="redirect" >/html/login.html</result>
+			<result name="input">updatePassword.jsp</result>
+		</action>
+		<action name="regist" class="com.digger.action.User_infoAction"
+			method="Regist">
+			<result name="input">regist.jsp</result>
+			<result name="success">login.jsp</result>
+		</action>
+		<action name="updateUser_info" class="com.digger.action.User_infoAction"
+			method="updateUser_info">
+			<result name="success">message.jsp</result>
+			<result name="error">updateUser_info.jsp</result>
+		</action>
+		<action name="selectuserinfo" class="com.digger.action.User_infoAction"
+			method="selectuserinfo">
+			<result name="success">user_info.jsp</result>
+		</action>
+		<action name="logout" class="com.digger.action.User_infoAction" method="logout">
+			<result name="success" type="redirect" >/jsp/login.jsp</result>
+		</action>
+		<action name="savaMap" class="com.digger.action.MapAction" method="savaMap" >
+		<result name="input">mapSave.jsp</result>
+		</action>
+		<action name="Ranks" class="com.digger.action.Map_log_latAction" method="Ranks">
+		<result name="success">map.jsp</result>
+		</action>
+		<action name="select" class="com.digger.action.Map_log_latAction" method="select">
+		<result name="success">map.jsp</result>
+		<result name="error">map.jsp</result>
+		</action>
+		<action name="selectMap" class="com.digger.action.Map_log_latAction" method="selectMap">
+		<result name="success">map.jsp</result>
+		<result name="error" >map.jsp</result>
+		</action>
+		<action name="selectAll" class="com.digger.action.Map_log_latAction" method="selectAll">
+		<result name="success">map_main.jsp</result>
+		</action>
+		<action name="selectId" class="com.digger.action.Map_log_latAction" method="selectId">
+		<result name="success">mapUpdate.jsp</result>
+		</action>
+		<action name="updateMap" class="com.digger.action.MapAction" method="updateMap">
+		<result name="input" >mapUpdate.jsp</result>
+		<result name="success" type="redirectAction">map/selectAll</result>
+		</action>
+		<action name="deleteMap" class="com.digger.action.Map_log_latAction" method="deleteMap">
+		<result name="success" type="redirectAction">map/selectAll</result>
+		</action>
+		<action name="map" class="com.digger.action.Map_log_latAction" >
+		<result name="deleteAll" type="redirectAction">map/selectAll</result>
+		<result name="select_map" >map_main.jsp</result>
+		</action>
+		<action name="saveRole" class="com.digger.action.RoleAction" method="saveRole">
+		<result name="success">role.jsp</result>
+		<result name="error">role.jsp</result>
+		</action>
+		<action name="selectRoleId" class="com.digger.action.RoleAction" method="selectId">
+		<result name="success">updateRole.jsp</result>
+		</action>
+		<action name="selectRoleAll" class="com.digger.action.RoleAction" method="selectRoleAll">
+		<result name="success">role_main.jsp</result>
+		</action>
+		<action name="deleteRole" class="com.digger.action.RoleAction" method="deleteRole">
+		<result name="success" type="redirectAction">jsp/selectRoleAll</result>
+		</action>
+		<action name="updateRole" class="com.digger.action.RoleAction" method="updateRole">
+		<result name="success" type="redirectAction">jsp/selectRoleAll</result>
+		</action>
+		<action name="role" class="com.digger.action.RoleAction">
+		<result name="deleteRoleAll" type="redirectAction">jsp/selectRoleAll</result>
+		<result name="selectRole">role_main.jsp</result>
+		</action>
+		<action name="savaRight" class="com.digger.action.Role_rightAction" method="savaRight">
+		<result name="success" type="redirectAction">jsp/selectRightInfo</result>
+		</action>
+		<action name="updateRight" class="com.digger.action.Role_rightAction" method="updateRight">
+		<result name="success" type="redirectAction">jsp/selectRightAll</result>
+		</action>
+		<action name="deleteRight" class="com.digger.action.Role_rightAction" method="deleteRight">
+		<result name="success" type="redirectAction">jsp/selectRightAll</result>
+		</action>
+		<action name="selectRightAll" class="com.digger.action.Role_rightAction" method="selectRightAll">
+		<result name="success">right_main.jsp</result>
+		</action>
+		<action name="right" class="com.digger.action.Role_rightAction" >
+		<result name="deleteRightAll" type="redirectAction">jsp/selectRightAll</result>
+		<result name="selectRight">right_main.jsp</result>
+		</action>
+		<action name="selectRightInfo" class="com.digger.action.Role_rightAction" method="selectRightInfo">
+		<result name="success" >right.jsp</result>
+		</action>
+		<action name="selectRightId" class="com.digger.action.Role_rightAction" method="selectRightId">
+		<result name="success">updateRight.jsp</result>
+		</action>
+		<action name="selectRights" class="com.digger.action.Role_rightAction" method="selectRights">
+		<result name="success">selectRight.jsp</result>
+		</action>
+		<action name="savaMenu" class="com.digger.action.MenuAction" method="savaMenu">
+		<result name="success">menuSave.jsp</result>
+		<result name="error">menuSave.jsp</result>
+		</action>
+		<action name="selectMenuId" class="com.digger.action.MenuAction" method="selectMenuId">
+		<result name="success">viewMenu.jsp</result>
+		</action>
+		<action name="selectMenuInfo" class="com.digger.action.MenuAction" method="selectMenuInfo">
+		<result name="success">updateMenu.jsp</result>
+		</action>
+		<action name="updateMenu" class="com.digger.action.MenuAction" method="updateMenu">
+		<result name="success" type="redirectAction">jsp/selectMenuAll</result>
+		</action>
+		<action name="deleteMenu" class="com.digger.action.MenuAction" method="deleteMenu">
+		<result name="success" type="redirectAction">jsp/selectMenuAll</result>
+		</action>
+		<action name="selectMenuAll" class="com.digger.action.MenuAction" method="selectMenuAll">
+		<result name="success">menu_main.jsp</result>
+		</action>
+		<action name="menu" class="com.digger.action.MenuAction">
+		<result name="deleteMenuAll" type="redirectAction">jsp/selectMenuAll</result>
+		<result name="selectMenu">menu_main.jsp</result>
+		</action>
+		<action name="showTables" class="com.digger.action.DateMaintainAction" method="showTables">
+		<result name="success">Date_Backup.jsp</result>
+		</action>
+		<action name="backup" class="com.digger.action.DateMaintainAction" method="backup">
+		<result name="success" >Date_Backup.jsp</result>
+		<result name="error" >Date_Backup.jsp</result>
+		</action>
+		<action name="selectDateAll" class="com.digger.action.DateMaintainAction" method="selectDateAll">
+		<result name="success">Data_maintain.jsp</result>
+		</action>
+		<action name="selectdate" class="com.digger.action.DateMaintainAction" method="selectdate">
+		<result name="success">Data_maintain.jsp</result>
+		</action>
+		<action name="recovery" class="com.digger.action.DateMaintainAction" method="recovery">
+		<result name="success" type="redirectAction">jsp/selectDateAll</result>
+		<result name="error" type="redirectAction">jsp/selectDateAll</result>
+		</action>
+	<action name="savePay" class="com.digger.action.PayAction"
+		method="savePay">
+		<result name="success" type="redirect">/html/login.html
+		</result>
+		<result name="error">paySave.jsp</result>
+	</action>
+	<action name="updatePayword" class="com.digger.action.PayAction"
+		method="updatePayword">
+		<result name="success">message.jsp</result>
+		<result name="error">payUpdate.jsp</result>
+	</action>
+	<action name="saveRecharge" class="com.digger.action.RechargeAction"
+		method="saveRecharge">
+		<result name="success">rechargeSave.jsp</result>
+		<result name="error">rechargeSave.jsp</result>
+	</action>
+	<action name="selectRecharge" class="com.digger.action.RechargeAction"
+		method="selectRecharge">
+		<result name="success">recharge.jsp</result>
+		<result name="error">recharge.jsp</result>
+	</action>
+	<action name="selectTradingAll" class="com.digger.action.Trading_infoAction"
+		method="selectTradingAll">
+		<result name="success">trading_main.jsp</result>
+	</action>
+	<action name="selecttrading" class="com.digger.action.Trading_infoAction"
+		method="selecttrading">
+		<result name="success">trading_main.jsp</result>
+	</action>
+	<action name="trading" class="com.digger.action.Trading_infoAction"
+		method="trading">
+		<result name="success">trading.jsp</result>
+	</action>
+	<action name="payTrading" class="com.digger.action.Trading_infoAction"
+		method="payTrading">
+		<result name="success">message.jsp</result>
+		<result name="error">trading.jsp</result>
+	</action>
+	<action name="selectmesinfo" class="com.digger.action.MessageAction" method="selectmesinfo">
+	<result name="success">message_view.jsp</result>
+	</action>
+	<action name="sendMessage" class="com.digger.action.MessageAction" method="sendMessage">
+	<result name="success">message.jsp</result>
+	<result name="error">messageSend.jsp</result>
+	</action>
+	<action name="selectMesAll" class="com.digger.action.MessageAction" method="selectMesAll">
+	<result name="success">messsage_main.jsp</result>
+	</action>
+	<action name="selectMes" class="com.digger.action.MessageAction" method="selectMes">
+	<result name="success">messsage_main.jsp</result>
+	</action>
+	<action name="selectMesSend" class="com.digger.action.MessageAction" method="selectMesSend">
+	<result name="success" >mess_send.jsp</result>
+	</action>
+	<action name="deletemes" class="com.digger.action.MessageAction" method="deletemes">
+	<result name="success" type="redirectAction">jsp/selectMesSend</result>
+	</action>
+	<action name="deleteMessage" class="com.digger.action.MessageAction" method="deleteMessage">
+	<result name="success" type="redirectAction">jsp/selectMesAll</result>
+	</action>
+	
+	</package>
+
+</struts>
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=GB2312"/>
+    <title>Google Maps JavaScript API范例1：基本范例</title>
+    <script charset="utf-8" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=abcdefg"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+
+    function load() {
+
+var map = new GMap2(document.getElementById("map"));
+map.addControl(new GSmallMapControl());
+map.addControl(new GMapTypeControl());
+map.setCenter(new GLatLng(39.88174,116.40632),4);
+var a=33.50001;
+var b=99.50001;
+function createMarker(point, number) {
+  var marker = new GMarker(point);
+  GEvent.addListener(marker, "click", function() {
+    marker.openInfoWindowHtml("Marker #<b>" + number+ + "</b>");
+  });
+  return marker;
+}
+
+var point1 =new GLatLng(a,b);
+map.addOverlay(createMarker(point, "1"));
+}
+}
+    //]]>
+    </script>
+  </head>
+  <body onload="load()" onunload="GUnload()">
+    <div id="map" style="width: 750px; height: 550px"></div>
+  </body>
+</html>
